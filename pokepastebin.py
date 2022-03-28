@@ -18,7 +18,7 @@ def get_user_info(poke_name):
      
 
     if response.status_code == 200:
-        print('pokeinfo')
+        print('success')
         return response.json()
     else:
         print('fail to get info',response.status_code)
