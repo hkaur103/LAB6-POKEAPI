@@ -14,7 +14,7 @@ def main():
 def get_user_info(poke_name):
     print("getting poke info- ", end='')
     poke_url = 'https://pokeapi.co/api/v2/pokemon/' 
-    response = requests.get(poke_url + poke_name)
+    response = requests.get(poke_url + str(poke_name))
      
 
     if response.status_code == 200:
