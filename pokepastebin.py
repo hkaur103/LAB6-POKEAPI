@@ -15,7 +15,7 @@ def get_user_info(poke_name):
     print("getting poke info- ", end='')
     poke_url = 'https://pokeapi.co/api/v2/pokemon/' 
     response = requests.get(poke_url + poke_name)
-
+    
     if response.status_code == 200:
         print('pokeinfo')
         return response.json()
@@ -25,8 +25,8 @@ def get_user_info(poke_name):
 
 def get_user_strings(user_dict):
     title = user_dict['name'] + "Pokemon abiltites"
-    body_text = "Abilties: " + user_dict['abilities']['0']['ability']['name'] + "\n"
-    body_text += "Abilties: " + user_dict['abilities']['1']['abiltiy']['name']
+    body_text = "Abilties:" + user_dict['abilities'][0]['ability']['name'] + "\n"
+    body_text += "Abilties: " + user_dict['abilities'][1]['ability']['name']
     return (title, body_text)
 
 def post_to_pastebin(title, body_text):
